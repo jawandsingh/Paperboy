@@ -7,11 +7,16 @@ using Xamarin.Forms;
 
 namespace Paperboy
 {
-	public partial class MainPage : ContentPage
-	{
-		public MainPage()
-		{
-			InitializeComponent();
-		}
-	}
+    public partial class MainPage : TabbedPage
+    {
+        public MainPage()
+        {
+            InitializeComponent();
+        }
+
+        private async void ToolbarItem_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Pages.SettingsPage());
+        }
+    }
 }
